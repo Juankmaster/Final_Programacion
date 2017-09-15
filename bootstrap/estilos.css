@@ -1,0 +1,144 @@
+
+
+@import url("bootstrap/fonts/glyphicons-halflings-regularsvg");
+
+ body{
+
+	 background-color:#ffffff; 
+} 
+#nav > ul > li {
+			border-radius: 5px 5px 5px 5px;
+			display: inline-block;
+			margin-left: 0.5em;
+			padding: 0.5em 1.5em;
+			text-decoration: none;
+			color: inherit;
+			line-height: 1.75em;
+			font-family:inherit;
+			font-size: 25px;
+			position: relative;
+			margin-bottom: 50px	;
+
+			
+
+		}
+.container-fluid	{
+ adding-top: 10px;
+  background: #333333 url("../imagenes/pic01.jpg") no-repeat;
+  height: 700px;
+	width: auto;
+}
+#nav > ul > li > a:hover{
+	text-decoration: none;
+}
+.container{
+	color: #fff;
+	font-size: 20px;
+	height: 500px;
+	width: auto;
+}
+
+.container-principal{
+	color: #fff;
+	height: 60px;
+	width: auto;
+	background-color:#06268D;
+	
+}
+.container h2{
+	font-size: 35px;
+}
+#btn {
+	margin-top: 110px;
+	border-radius: 5px,5px,5px,5px;
+	width: 10%;
+	height:auto;
+	font-size: 20px;
+
+
+}
+#nav{
+
+	text-align: center;
+}
+#nav > ul > li > a{
+			
+			text-decoration: none;
+			color: #fff;
+			
+			font-family:inherit;
+			font-size: 25px;
+			position: relative;
+
+		}
+p{
+color: #000;
+		}
+.aside p{
+
+	/*background-color:#0ff;*/
+}
+.main{
+
+	/*padding-left: 33%;*/
+}
+.padin{
+
+	margin-top: 10px;			
+}
+.conta-1{
+	width: 30%;
+	height:auto;
+	background-color:#fff;
+	border-radius: 3px;
+
+
+}
+.conten{
+	 text-align: center;
+}
+
+
+
+.centro{
+padding-left: 13% ;	
+}
+.principal{
+
+	background-color:#204FE9;
+}
+.cajas{
+
+	width: 95%;
+	height: 500px;
+	background:#fff;
+}
+.panel.row{
+	    margin-bottom: 0px;
+	     background:blue;
+}
+.contenedor-principal1{
+
+width: 95%;
+	height: 500px;
+	background:#93ABFF;
+
+}
+   
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+		
+

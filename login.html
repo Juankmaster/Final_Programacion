@@ -1,0 +1,68 @@
+	
+<!DOCTYPE html>
+<html lang="es">
+<head>
+	<meta charset="UTF-8">
+	<title>Login</title>
+	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="bootstrap/estiloLogin.css">
+</head>
+<body class="logos">
+	<header >
+		<br>
+			<div class="row conten">
+				<div class="col-sm-12">
+				<center><img src="imagenes/logocecep.png"></center>	
+				</div>
+			</div>
+	</header>
+	<!-- main -->
+	<br>
+
+		<!-- Contenedor del formulario de Login -->
+	<div>
+		<center>	
+			<div class="container-fluid">
+				<div class="conta-1">
+				<form  role="form" method="post" action="control/controladorLogin.php" 			class="form_login">
+					<!-- <div class="form-group">
+						
+					</div> -->
+					<div class="form-group">
+						<label  for="usuario">Codigo Empresa</label>
+						<input type="text" class="form-control" name="usuario" required placeholder="Nombre de Usuario Requerido">
+				   </div>
+				   <div class="form-group">
+						<label  for="usuario">Nombre Usuario</label>
+						<input type="text" class="form-control" name="usuario" required placeholder="Nombre de Usuario Requerido">
+				   </div>
+				   <div class="form-group">
+						<label  for="clave">Contraseña</label>
+						<input type="password" class="form-control" name="clave" required placeholder="Campo Requerido">
+				   </div>
+				   <div class="form-group">
+						
+		<center>
+			<input type="submit" class="btn-btn-default btn-lg" name="clave"value="LOGIN">
+			<input type="hidden"  name="accion" value="consultar_login"/>
+
+		   </center>
+				   </div>
+					
+				</form>
+			</div>
+			
+			</div>
+		</center>
+	</div>
+	
+  
+  
+
+	
+		
+		
+	
+</body>
+</html>
