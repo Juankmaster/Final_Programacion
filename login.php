@@ -1,10 +1,13 @@
-	
+
+<!-- Pagina de login  -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>Login</title>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<link rel="shortcut icon" href="imagenes/favicon.ico"/>
+	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/estiloLogin.css">
 </head>
@@ -25,13 +28,13 @@
 		<center>	
 			<div class="container-fluid">
 				<div class="conta-1">
-				<form  role="form" method="post" action="control/controladorLogin.php" 			class="form_login">
+				<form  role="form" method="post" action="control/controladorLogin.php" class="form_login">
 					<!-- <div class="form-group">
 						
 					</div> -->
 					<div class="form-group">
-						<label  for="usuario">Codigo Empresa</label>
-						<input type="text" class="form-control" name="usuario" required placeholder="Nombre de Usuario Requerido">
+						<label  for="cod_empresa">Codigo Empresa</label>
+						<input type="text" class="form-control" name="cod_empresa" required placeholder="Nombre de Usuario Requerido">
 				   </div>
 				   <div class="form-group">
 						<label  for="usuario">Nombre Usuario</label>
@@ -42,11 +45,12 @@
 						<input type="password" class="form-control" name="clave" required placeholder="Campo Requerido">
 				   </div>
 				   <div class="form-group">
+				   	  <label><input type="checkbox" name="remember"> Mantener Logueado</label>
 						
 		<center>
-			<input type="submit" class="btn-btn-default btn-lg" name="clave"value="LOGIN">
-			<input type="hidden"  name="accion" value="consultar_login"/>
-
+			<input type="submit" class="btn-btn-default btn-lg" name="login" value="LOGIN">
+			
+		
 		   </center>
 				   </div>
 					

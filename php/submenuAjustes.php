@@ -1,34 +1,38 @@
+
+<!-- Codigo del submenu ajustes -->
+
 <!DOCTYPE html>
 <html lang="es">
 <head>
 	<meta charset="UTF-8">
 	<title>SubmenuEmpresas</title>
-	<script type="text/javascript" src="js/jquery.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/estilos1.css">
-	<script type="text/javascript" src="js/funcionesJquery.js"></script>
-	<script type="text/javascript" src="js/jquery.js"></script>
-	 <script language="javascript">/*funcion principal de jquery*/
+	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
+	 <script language="javascript">
+	 /*funcion principal de jquery*/
 			$(document).ready(Inicio);
 	</script>
 	
+
 </head>
-<body>
+   <body>
 	
 	<!-- main-2 -->
-	<div class="principal-2" style="background:#D8DDEF">
+	<div class="principal-2" >
 		<!-- subMenu de navegacion para la opcion de Ajustes -->
 
 		 <div class="panel-group">
           	<div class="panel panel-primary">
             	<div class="panel-heading"  align="center">
             	</div>
-            	  <div class="panel-body">
-	            	<div class="row" >
-	            		<!-- Boton del submenu Roles -->
+            	  <div class="panel-body" style="box-shadow: inset 2px -5px 13px 1px">
+	            	<div class="row"  >																												
+	            		<!-- Boton del submenu Usuarios -->
 						<div class="col-sm-2" style="padding:0px 0px 0px 0px">
 							<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-								<li role="presentacion" id="roles"><a href="#" class="btn btn-default btn-lg ">ROLES</a></li>
+								<li role="presentacion" id="usuarios"><a href="#" class="btn btn-default btn-lg ">USUARIOS</a></li>
 							</ul>			
 						</div>
 						<!-- Boton del submenu Empresas -->
@@ -48,58 +52,46 @@
 						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
 							<li role="presentacion" id="paises"><a href="#" class="btn btn-default btn-lg">PAISES</a></li>
 						</ul>			
+					</div><!-- Boton del submenu Roles -->
+					<div class="col-sm-2" style="padding:0px 0px 0px 0px">
+						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+							<li role="presentacion" id="roles"><a href="#" id="rol" class="btn btn-default btn-lg ">ROLES</a></li>
+						</ul>			
 					</div>
-		<!-- Panel contenedor del submenu Gestion de roles -->
+				
+		<!-- Panel contenedor del submenu Gestion de Usuarios -->
 
-	<div class="panel panel-default">
+		  <div class="panel panel-default" >
 
-		<!-- En este panel-body  se cargan los submenus de Roles, Empresas,ciudades, paises -->
+		<!-- En este panel-body  se cargan los submenus de Usuarios, Empresas,ciudades, paises -->
 				 
-		 <div class="panel-body" id="subpanel1">
+		     <div class="panel-body" id="subpanel1">
+		     	<center>
+	<!-- Panel donde se muestran los diferentes submenus de los menus principales(empresas,Selecciones,reportes, ajustes) -->
+					<div>
+						<span ><img  style="margin-top:110px,width: 50%;height:50%;" src="imagenes/logot_1.png">
+						</span>
+						<p><h2> BIENVENIDO AL MENU DE AJUSTES</h2></p>
+					</div>
+				</center>
 
-			<div class="row">
+          <!-- espacio donde se cargan los demas submenus  -->
 
-<!-- estructura del formulario para crear el submenu de Roles(campos de texto botones etc)  -->
-				<div class="col-sm-4">
-		  			<!-- lista roles creados -->
-		 		</div>
-<!-- Diseño del formulario para crear nuevos roles -->
-		  		<div class="col-sm-8">
-			  		<form class="form_rol" role="form" method="post" action="control/controladorLogin.php">
-						<div class="panel-group">
-							<div class="panel panel-primary" style="width:600px;">
-							<div class="panel-heading">
-								<h4>NUEVO ROL</h4>
-							</div>
-								<div class="panel-body">
-
-								<label  for="id_rol">&nbsp; &nbsp;Id_Rol:</label>
-								<input type="text" size="4px" name="id_rol"><br><br>
-								<label  for="nombre_rol">Nombre:</label>
-								<input type="text"  name="nombre_rol"><br><br>
-								
-								<label  for="desc_rol" style="padding-left:0px">Descripcion:</label>
-								<textarea name="desc_rol"></textarea><br><br>
-								
-								<input type="submit" class="btn-btn-default " name="rol" value="Guardar">
-								<input type="hidden"  name="accion" value="crear_rol"/>
-								</div>
-									
-								</div>
-						    </div>
-						</div>		
-					</form>   
-				</div>
-		  	</div>
+			 </div>		
+		  </div> 
+		</div>
 	  	</div>
 	  </div>
 	</div>
   </div>
-</div>
-		
 </body>
 </html>
    
+ 
+					
+	  	
+					
+		
 								
 									
 									

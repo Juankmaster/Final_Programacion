@@ -14,6 +14,48 @@
 
 </head>
 <body>
+
+	<!-- main-2 -->
+	<div class="principal-2" style="background:#D8DDEF">
+		<!-- subMenu de navegacion para la opcion de Ajustes -->
+
+		 <div class="panel-group">
+          	<div class="panel panel-primary">
+            	<div class="panel-heading"  align="center">
+            	</div>
+            	  <div class="panel-body">
+	            	<div class="row" >																												
+	            		<!-- Boton del submenu Usuarios -->
+						<div class="col-sm-2" style="padding:0px 0px 0px 0px">
+							<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+								<li role="presentacion" id="usuarios"><a href="#" class="btn btn-default btn-lg ">USUARIOS</a></li>
+							</ul>			
+						</div>
+						<!-- Boton del submenu Empresas -->
+					<div class="col-sm-2" style="padding:0px 0px 0px 0px ">
+						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+							<li role="precentacion" id="empresas2"><a href="#" class="btn btn-default btn-lg">EMPRESAS</a></li>
+						</ul>			
+					</div>
+					<!-- Boton del submenu Ciudades -->
+					<div class="col-sm-2" style="padding:0px 0px 0px 0px">
+						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+							<li role="precentacion" id="ciudades"><a href="#" class="btn btn-default btn-lg">CIUDADES</a></li>
+						</ul>			
+					</div>
+					<!-- Boton del submenu Paises -->
+					<div class="col-sm-2" style="padding:0px 0px 0px 0px">
+						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+							<li role="presentacion" id="paises"><a href="#" class="btn btn-default btn-lg">PAISES</a></li>
+						</ul>			
+					</div><!-- Boton del submenu Roles -->
+					<div class="col-sm-2" style="padding:0px 0px 0px 0px">
+						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+							<li role="presentacion" id="roles"><a href="#" id="rol" class="btn btn-default btn-lg ">ROLES</a></li>
+						</ul>			
+					</div>
+
+	<!-- Panel donde se muestra el submenu ciudades en el menu Ajustes -->
 	<div class="panel panel-default">
 
 		<!-- Estructura contenedora general del Panel Ciudades -->
