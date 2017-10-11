@@ -81,6 +81,11 @@
 	  $("#subpanel1").load("php/submenuAjustesUsuarios.php");
 	   $("#usuarios").css("background-color","#BEC2C4");
 	    $("#rol").css("background-color","");
+	    $("#empresas2").css("background-color","");
+	    $("#ciudades").css("background-color","");
+	    $("#paises").css("background-color","");
+	    
+
 
 	}); 						
 		
@@ -90,6 +95,13 @@
 	$("#empresas2").click(function(evento){
 		evento.preventDefault();
 	  $("#mostrar").load("php/submenuAjustesEmpresas.php");
+
+	});
+
+    // Funcion  que se ejecuta al oprimir el boton Departamentos que muestra el submenu departamentos del menu ajustes
+	$("#departamentos").click(function(evento){
+		evento.preventDefault();
+	  $("#mostrar").load("php/submenuAjustesDepartamentos.php");
 
 	});
 
@@ -130,7 +142,7 @@
     //Esta funcion trae el codigo del registro a actualizar y lo envia editar rol para procesar la informacion
 
 	$(".editar_rol").click(function(evento){
-		/*evento.preventDefault();*/
+		evento.preventDefault();
 		var id_rol= $(this).attr("title");
 	  $.ajax({
 	  	    type:"post",
@@ -138,7 +150,7 @@
 	  	    data:'id_rol=' + id_rol,
 	  	    dataType:"html",
 	  	    success:function(result){
-	  	    	$(".editar").html(result);
+	  	    	$("#editar").html(result);
 	  	   }
 	
 	  })
@@ -156,7 +168,7 @@
 	  	    data:datos,
 	  	    dataType:"html",
 	  	   success:function(result){
-	  	    $(".editar").html("");
+	  	    $("#editar").html("");
 	  	    $("#subpanel1").load("php/submenuAjustesRoles.php");
 
 	  	   }
@@ -189,7 +201,7 @@
 	//Funcion para Crear  nuevos Roles en el submenu Roles en el menu Ajustes
 
 	$("#nuevo_rol").click(function(){
-	  $(".editar").load("modelo/crearRol.php");
+	  $("#editar").load("modelo/crearRol.php");
 
 	}); 
 	//Funcion que gestiona los datos del formulario de nuevo Rol 
@@ -203,16 +215,15 @@
 			data:datos,
 			dataType:"html",
 			success:function(result){
-				$(".editar").html("");
-	  	        $("#subpanel1").load("");
+	  	       $("#subpanel1").load("php/submenuAjustesRoles.php");	
 
 			}
 		})
      });
  //Codigo para cancelar la accion de crear un nuevo rol en el sunmenu crear rol 
 
-	 $("#cancelar").click(function(){
-	 	$(".editar").html("");
+	 $(".cancelar").click(function(){
+	 	$("#subpanel1").load("php/submenuAjustesRoles.php");
 		   });
 
 /*----------------------------------------------------------------------------------------------------*/
@@ -221,41 +232,46 @@
 
 	//Codigo para actualizar Usuarios en  el submenu Usuarios del menu de Ajustes
     //Esta funcion trae el codigo del registro a actualizar y lo envia editar rol para procesar la informacion
-			
-	$(".editar_usuario").click(function(){
-		var id_usuario=$(this).attr("title");
+    $(".editar_usuario").click(function(){
+    	var id_usuario=$(this).attr("title");
+    	$.ajax({
+    		type:"post",
+    		url:"modeloUsuario/editarUsuario.php",
+    		data:'id_usuario=' + id_usuario,
+    		dataType:"html",
+    		success:function(result){
+    			$("#editar").html(result);
+    		}
 
-		$.ajax({
-			type:"post",
-			url:"modeloUsuario/editarUsuario.php",
-			data:'id_usuario='+ id_usuario,
-			dataType:"html",
-			success:function(result){
-				$(".editar").html(result);
-				
-			}
-		})
-	});
+    	})
+
+    });
+			
 
 	//Esta funcion llama al controlador y envia los datos del formulario para Actualizar los usuarios del submenu Usuariosen el menu Ajustes
 
 	$("#actualizar_usuario").click(function(evento){
         evento.preventDefault();
-		var datos= $("#f_a_usuarios").serialize();
+		var datos= $("#fusuarios").serialize();
+		alert(datos);
 	  $.ajax({
 	  	    type:"post",
 	  	    url:"control/controladorMenu.php",
 	  	    data:datos,
 	  	    dataType:"html",
 	  	   success:function(result){
-	  	    $(".editar").html("");
 	  	     $("#subpanel1").load("php/submenuAjustesUsuarios.php");
-	  	   /* $(".editar").load("php/submenuAjustes.php");*/
-
+	  	   
 	  	   }
 	  })
 	}); 
-		
+
+	// Esta funcion cancela la edicion del formulario actualizar Rol
+
+	$(".cerrar").click(function() {
+		$("#subpanel1").load("php/submenuAjustesUsuarios.php");
+
+	});	
 
 	//Esta funcion trae el codigo del usuario a  borrar en el submenu usuarios del menu ajustes
 
@@ -270,7 +286,7 @@
 				data:{id_usuario: id_usuario, accion:'borrar_usuario'} ,
 				dataType:"html",
 				success:function(result){
-				 $(".editar").load("php/submenuAjustesUsuarios.php");
+				 $("#subpanel1").load("php/submenuAjustesUsuarios.php");
 				          
 				}
 			})
@@ -280,15 +296,13 @@
 	//Funcin para llamar el formulario de nuevo Usuario en el submenu Usuarios del menu Ajustes
 
 	$("#nuevo_usuario").click(function(){
-		alert("hola");
-		$(".editar").load("modeloUsuario/crearUsuario.php");
-	});
+		$("#editar").load("modeloUsuario/crearUsuario.php");
+	})
 
     //Funcion ajax para procesar y crear un nuevo Usuario
 
     $("#crear_usuario").click(function(){
-
-    	var datos=("#f_n_usuario").serialize();
+    	var datos=$("#fnusuarios").serialize();
     	alert(datos);
     	$.ajax({
     		type:"post",
@@ -296,20 +310,19 @@
     		data:datos,
     		dataType:"html",
     		success:function(result){
-             $(".editar").html("");
-             /*$("#subpanel1").load("submenuAjustesUsuarios.php");*/
+             $("#subpanel1").load("submenuAjustesUsuarios.php");
 
     		}
     	})
     });
 
 
-
-
-
-
-
 }
+
+
+
+
+
 
 
 	

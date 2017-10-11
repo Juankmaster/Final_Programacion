@@ -3,9 +3,9 @@
 
 class Usuarios 
 {
-	private $id_usuario;
-	private $nom_usuario;
-	private $id_rol;
+	public $id_usuario;
+	public $nom_usuario;
+	public $id_rol;
 	public $res;
 
 	/*function __construct()
@@ -70,18 +70,21 @@ class Usuarios
 		}
 	}
 // Funcion para actualizar Usuarios
+
 	public function actualizar_Usuario($datos=array())
 	{
 	  
 		foreach ($datos as $campo=>$valor):
 				$$campo = $valor;
 			endforeach;
-			$sql ="UPDATE usuarios SET Nom_Usuario='$nom_usuario', Email='$email_usuario',id_rol='$roles' WHERE id_usuario = $id_usuario";
-
 			$this->abrir_conexion();
 
-			$res=$this->conexion->query($sql) ;
+			$sql =" UPDATE usuarios SET Nom_Usuario='$nom_usuario', Email='$email_usuario', clave_usuario='$clave_usuario',id_rol='$rol_usuario' WHERE id_usuario = '$id_usuario'";
+
+
+			$this->res=$this->conexion->query($sql) or die($this->conexion->connect_error);
 			$this->conexion->close();
+			
 			
 	}
 			
@@ -110,7 +113,7 @@ class Usuarios
 
 					$this->abrir_conexion();
 
-					$sql = "INSERT INTO `usuarios`(`id_usuario`,`Nom_Usuario`,`Email`,`clave_usuario`,`id_rol`) VALUES ('','$nom_usuario','$email_usuario','$pass_usuario','$rol_usuario')";
+					$sql = "INSERT INTO `usuarios`(`id_usuario`,`Nom_Usuario`,`Email`,`clave_usuario`,`id_rol`) VALUES ('','$nom_usuario','$email_usuario','$clave_usuario','$rol_usuario')";
 					
 					$this->conexion->query($sql);
 					$this->conexion->close();

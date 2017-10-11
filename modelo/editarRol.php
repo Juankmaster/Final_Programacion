@@ -1,62 +1,55 @@
 <?php 
 
  include '../modelo/modelo_rol.php';
- 			$id_rol=$_POST["id_rol"];
- 		    $rol=new Roles();
-		   $resultado= $rol->consultar_rol($id_rol);	
+		$id_rol=$_POST["id_rol"];
+	    $rol=new Roles();
+        $resultado= $rol->consultar_rol($id_rol);	
 		 
 
  ?>
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
-	<meta charset="UTF-8">
-	<title>submenuAjustesRoles</title>
-	<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/estilos1.css">
-	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
-	 <script language="javascript">
-	 
-	 /*funcion principal de jquery*/
-
-			$(document).ready(Inicio);
-	</script>
-
-</head>
- </head>
- <body>
-
- 	<form id="f_a_roles" role="form" method="post">
+ 	<form id="f_a_roles" role="form" class="form-horizontal">
 		<div class="panel-group">
-			<div class="panel panel-primary" style="width:600px;">
-			<!-- <div class="panel-heading" style="background:#0971B3">
-				Editar Rol
-			</div> -->
-				<div class="panel-body">
-				</div>
+			<div class="panel panel-primary" >
+			
+			 <div class="panel-body">
+				
+			  <div class="form-group">
+				<label  for="id_rol" class="control-label col-sm-2">Id Rol:</label>
+				 <div class="col-sm-10">
+				  <input type="text" class="form-control"  readonly="true" value="<?php echo trim($resultado[0]['id_rol']);?>" name="id_rol">
+				 </div>
+			  </div>
+
 				<div class="form-group">
-				<label  for="id_rol"> Id Rol&nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-				<input type="text" size="18px" readonly="true" value="<?php echo trim($resultado[0]['id_rol']);?>" name="id_rol">
+				  <label  for="nom_rol" class="control-label col-sm-2">Nombre:</label>
+				   <div class="col-sm-10">
+				    <input type="text" class="form-control"  value="<?php echo trim($resultado[0]['Nom_Rol']);?>" name="nom_rol">
+				   </div>
 				</div>
+
 				<div class="form-group">
-				<label  for="nom_rol">Nombre&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</label>
-				<input type="text" size="18px"value=" <?php echo trim($resultado[0]['Nom_Rol']);?>" name="nom_rol">
+				  <label  for="desc_rol" class="control-label col-sm-2">Descripcion: </label>
+				    <div class="col-sm-10">
+				     <textarea class="form-control" name="desc_rol"> <?php echo trim($resultado[0]['Des_Rol']); ?></textarea>
+				    </div>
 				</div>
+
 				<div class="form-group">
-				<label  for="nombre_pais">Descripcion &nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</label>
-				<textarea value="" name="desc_rol"> <?php echo trim($resultado[0]['Des_Rol']); ?></textarea>
-				</div>
-				<input type="submit" class="btn btn-primary " id="actualizar_rol" value="Actualizar"><br><br>
-				<input type="hidden"  name="accion" value="actualiza_rol"/>
+					<div class="col-sm-offset-2 col-sm-10">
+						<input type="submit" class="btn btn-primary " data-toggle="tooltip" title="Actualizar" id="actualizar_rol" value="Actualizar">
+						 <button type="button"  class="btn btn-success cancelar" data-toggle="tooltip" title="Cancelar">Cancelar</button>
+						<input type="hidden"  name="accion" value="actualiza_rol"/>
+			        </div>
+			    </div>
 			</div>
+		   <!-- </div> -->
 		</div>
 	</form>   
  	
 
+	 <!-- funcion principal de jquery -->
+ 	<script language="javascript">
+	  $(document).ready(Inicio);
+	</script>
 
-
- </body>
- </html>
+	 

@@ -10,63 +10,82 @@
 		   $resultados= $rol->listado_roles();
  ?>
 
- <!DOCTYPE html>
- <html lang="en">
- <head>
- 	<meta charset="UTF-8">
- 	<title>Document</title>
-	<meta charset="UTF-8">
-	<title>submenuAjustesRoles</title>
-	<script type="text/javascript" src="bootstrap/js/jquery.js"></script>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/estilos1.css">
-	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
-	 <script language="javascript">
-	 
-	 /*funcion principal de jquery*/
-			$(document).ready(Inicio);
-	</script>
-</head>
- </head>
- <body>
- 	<form id="f_a_usuarios" role="form" method="post">
+ <form id="fusuarios" role="form" class="form-horizontal">
 		<div class="panel-group">
-			<div class="panel panel-primary" style="width:600px;">
-			<!-- <div class="panel-heading" style="background:#0971B3">
-				Editar Rol
-			</div> -->
+			<div class="panel panel-primary" >
+			
 				<div class="panel-body">
-				</div>
-				<!-- <div class="form-group">
-				<label  for="id_usuario">Id&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-				<input type="text" size="18px" readonly="true" value="<?php echo trim($resultado[0]['id_usuario']);?>" name="id_usuario">
-				</div> -->
+				
 				<div class="form-group">
-				<label  for="nom_usuario">Nombre &nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;</label>
-				<input type="text" size="18px"value=" <?php echo trim($resultado[0]['Nom_Usuario']);?>" name="nom_usuario">
+				<label  for="id_usuario" class="hide"> Id Usuario </label>
+				<input type="text" size="18px" readonly="true" value="<?php echo trim($resultado[0]['id_usuario']);?>" name="id_usuario" class="hide">
 				</div>
+
 				<div class="form-group">
-				<label  for="email_usuario">Email &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; </label>
-				<input type="email" size="18px"  value="<?php echo trim($resultado[0]['Email']);?>" name="email_usuario">
+				 <label  for="nom_usuario" class="control-label col-sm-2">Nombre:</label>
+				  <div class="col-sm-10">
+				   <input type="text"  class="form-control" value="<?php echo trim($resultado[0]['Nom_Usuario']);?>" name="nom_usuario">
+				  </div>
 				</div>
+
 				<div class="form-group">
-				<label  for="roles">Rol &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; &nbsp;&nbsp; &nbsp;&nbsp;&nbsp; &nbsp;&nbsp;</label>
-				<select name="roles">
-					<?php foreach ($resultados as $row) {?>
-						 <option value="<?php echo $row['id_Rol']; ?>">
-						 <?php 	echo $row['Nom_Rol']; ?>
-					   </option>
-				<?php }  ?>
-				</select>  
+				 <label  for="email_usuario" class="control-label col-sm-2">Email:</label>
+				  <div class="col-sm-10">
+				   <input type="email" class="form-control" value="<?php echo trim($resultado[0]['Email']);?>" name="email_usuario">
+				  </div>
 				</div>
-				<input type="submit" class="btn btn-primary " id="actualizar_usuario" value="Actualizar"><br><br>
+
+				<div class="form-group">
+				 <label  for="clave_usuario" class="control-label col-sm-2">Clave:</label>
+				  <div class="col-sm-10">
+				   <input type="password" class="form-control" value="<?php echo trim($resultado[0]['clave_usuario']);?>" name="clave_usuario">
+				  </div>
+				</div>
+
+				<div class="form-group">
+				  <label  for="rol_usuario" class="control-label col-sm-2">Rol:</label>
+				   <div class="col-sm-10">
+				    <select name="rol_usuario" class="form-control">
+
+					<?php foreach ($resultados as $row) {
+						if ($resultado[0]['id_rol'] == $row['id_rol']) {
+						?>
+					<option selected value="<?php echo trim($row['id_rol']); ?>">
+						<?php echo trim($row['Nom_Rol']); ?>
+					</option>
+					<?php }else{ ?>
+					
+					<option value="<?php echo trim($row['id_rol']); ?>">
+						<?php echo trim($row['Nom_Rol']); ?>
+					</option>
+
+					<?php } } ?> 
+							
+
+					
+			        </select>
+				</div>
+				</div>
+				 <div class="form-group">        
+                   <div class="col-sm-offset-2 col-sm-10">
+				<input type="submit" class="btn btn-primary" data-toggle="tooltip" title="Actualizar" id="actualizar_usuario" value="Actualizar">
+                  <button type="button" id="cerrar" class="btn btn-success cerrar" data-toggle="tooltip" title="Cancelar">Cancelar</button>
 				<input type="hidden"  name="accion" value="actualizar_usuario"/>
+                  
+                   </div>
+                 </div>
+
 			</div>
 		</div>
-	</form>   
- </body>
- </html>
-
+	</form> 
+	</div>  
+						
+	<!--  // funcion principal de jquery -->
+	<script language="javascript">
+	 
+			$(document).ready(Inicio);
+	</script> 
+	
 				
 
 

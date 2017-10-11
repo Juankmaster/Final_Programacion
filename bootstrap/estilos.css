@@ -20,7 +20,7 @@
 
 		}
 .container-fluid	{
- adding-top: 10px;
+ padding-top: 10px;
   background: #333333 url("../imagenes/pic01.jpg") no-repeat;
   height: 700px;
 	width: auto;

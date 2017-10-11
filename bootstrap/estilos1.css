@@ -3,7 +3,7 @@
 
 	 background-color:#ffffff; 
 } 
-#nav > ul > li {
+/* #nav > ul > li {
 			border-radius: 5px 5px 5px 5px;
 			display: inline-block;
 			margin-left: 0.5em;
@@ -18,34 +18,34 @@
 
 			
 
-		}
-.container-fluid	{
+		} */
+/* .container-fluid	{
  adding-top: 10px;
   background: #333333 url("../imagenes/principal.jpg") no-repeat;
   height: 700px;
 	width: auto;
-}
+} */
 #nav > ul > li > a:hover{
 	text-decoration: none;
 }
-.container{
+/* .container{
 	color: #fff;
 	font-size: 20px;
 	height: 500px;
 	width: auto;
-}
+} */
 
-.container-principal{
+/* .container-principal{
 	color: #fff;
 	height: 60px;
 	width: auto;
 	background-color:#06268D;
 	
-}
+} */
 .container h2{
 	font-size: 35px;
 }
-#btn {
+/* #btn {
 	margin-top: 110px;
 	border-radius: 5px,5px,5px,5px;
 	width: 10%;
@@ -53,12 +53,12 @@
 	font-size: 20px;
 
 
-}
-#nav{
+} */
+/* #nav{
 
 	text-align: center;
-}
-#nav > ul > li > a{
+} */
+/* #nav > ul > li > a{
 			
 			text-decoration: none;
 			color: #fff;
@@ -67,7 +67,7 @@
 			font-size: 25px;
 			position: relative;
 
-		}
+		} */
 p{
 color: #000;
 		}
@@ -110,22 +110,22 @@ padding-left: 13% ;
 
 	background-color:#204FE9;
 }
-.cajas{
+/* .cajas{
 
 	width: 95%;
 	height: 500px;
 	background:#fff;
-}
-.panel.row{
+} */
+/* .panel.row{
 	    margin-bottom: 0px;
 	     background:blue;
-}
+} */
 .contenedor-principal1{
 
-width: 95%;
+/* width: 95%;
 	height: 500px;
 	background:#93ABFF;
-
+ */
 }
    
 

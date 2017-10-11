@@ -1,38 +1,19 @@
-<?php 
+ <!-- Codigo php para realizar el crud de Roles -->
+
+ <?php 
       include '../modeloUsuario/modelo_usuario.php';
  		 $usuario=new Usuarios();
 		 $listado=$usuario->listado_Usuario();
  ?>
 
-
-<!-- Codigo del submenu ajustes -->
-
-<!DOCTYPE html>
-<html lang="es">
-<head>
-	<meta charset="UTF-8">
-	<title>SubmenuEmpresas</title>
-	<script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
-	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
-	<link rel="stylesheet" type="text/css" href="bootstrap/estilos1.css">
-	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
-	 <script language="javascript">
-	 /*funcion principal de jquery*/
-			$(document).ready(Inicio);
-	</script>
 	
-
-</head>
-   <body>
-	
-          <!-- espacio donde se cargan los demas submenus  -->
+<!-- estructura del formulario para crear submenu de Paises (campos de texto botones etc)  -->
 <div class="row" >
+<div class="col-sm-4" >
 
-<!-- estructura del formulario para crear el submenu de Usuarios(campos de texto botones etc)  -->
-				<div class="col-sm-4">
-		  			<!-- lista Usuarios creados -->
-<div class="panel panel-default">
-   <div class="panel-heading" style="background:#0971B3"><span>Usuarios</span></div>
+<!-- Tablas para mostrar los roles que existen -->
+ <div class="panel panel-default">
+   <div class="panel-heading" style="background:#0971B3">Usuarios</div>
    	 <div class="table-responsive">
       <table class="table"  >
 	   <tbody>
@@ -46,26 +27,23 @@
      </table>
      </div>
   </div>
-</div>
-<!-- Diseño del formulario para crear nuevos Usuarios -->
-             <div class="col-sm-8">
+  </div>
+<!-- Panel donde se mostrara el  formulario para editar los Roles -->
+	<div class="col-sm-8">
+		<div id="editar">	
+		<a href="#" id="nuevo_usuario"><span class="glyphicon glyphicon-plus"></span> USUARIO</a>
+
+	    </div> 
 	    <!--Boton para invocar el formulario  de Nuevo Rol-->
-	    <a href="#" id="nuevo_usuario"><span class="glyphicon glyphicon-plus"></span> USUARIO</a>
-		 <div class="editar">	
-			   </div> 
-			 </div>		
-			</div>
-		  <!-- </div>
-		  	  	</div>
-		  	  </div>
-		  	</div>
-		    </div>
-		   </div>
-		  </div> -->
-					
-	  	
-					
+	</div>
+         
+</div>
 		
-</body>
-</html>
-   
+
+ <script language="javascript">
+	$(document).ready(Inicio);
+ </script>	
+
+	
+		  
+	
