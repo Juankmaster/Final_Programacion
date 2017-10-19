@@ -6,20 +6,32 @@
 
 require ('../modelo/modelo_rol.php');
 require ('../modeloUsuario/modelo_usuario.php');
+require ('../modeloDepartamento/modelo_departamento.php');
+require ('../modeloEmpresa/modelo_empresa.php');
+require ('../modeloCiudad/modelo_ciudad.php');
+require ('../modeloPais/modelo_pais.php');
 
 $datos=$_POST;
 
 switch ($_POST["accion"]) {
-  
+
+   // Crud para el submenu Departamentos del menu Ajustes
+
     case 'crear_departamento':
-        echo "Estas en crear_departamento";
+        $departamento=new Departamento();
+        $departamento->nuevo_Departamento($datos);
         break;
+
     case 'borrar_departamento':
-		 echo "Estas en borrar_departamento";
-        break; 
-    case 'editar_departamento':
-		 echo "Estas en editar_departamento";
+		$departamento=new Departamento();
+        $departamento->borrar_Departamento($datos['codigo']);
         break;
+
+    case 'actualizar_departamento':
+		$departamento=new Departamento();
+        $departamento->actualizar_Departamento($datos);
+        break;
+
          case 'consultar_departamento':
 		 echo "Estas en consultar_departamento";
         break;
@@ -111,41 +123,57 @@ switch ($_POST["accion"]) {
 
         // Crud para Empresas del submenu Ajustes
          case 'crear_empresa':
-        echo "Estas en crear_empresa";
+       $empresa=new Empresa();
+        $empresa->nueva_Empresa($datos);
         break;
+
     case 'borrar_empresa':
-		 echo "Estas en borrar_empresa";
+		$empresa=new Empresa();
+        $empresa->borrar_Empresa($_POST['id_empresa']);
         break; 
-    case 'editar_empresa':
-		 echo "Estas en editar_empresa";
+
+    case 'actualizar_empresa':
+		$empresa=new Empresa();
+        $empresa->actualizar_Empresa($datos);
         break;
+
          case 'consultar_empresa':
 		 echo "Estas en editar_empresa";
         break;
 
          // Crud para Ciudades del submenu Ajustes
          case 'crear_ciudad':
-        echo "Estas en crear_ciudad";
+         $ciudad=new Ciudad();
+         $ciudad->nueva_Ciudad($datos);
         break;
-    case 'borrar_ciuda':
-		 echo "Estas en borrar_ciudad";
-        break; 
-    case 'editar_ciudad':
-		 echo "Estas en editar_ciudad";
+
+    case 'borrar_ciudad':
+		$ciudad=new Ciudad();
+         $ciudad->borrar_Ciudad($_POST['id_ciudad']);
         break;
+
+    case 'actualizar_ciudad':
+		$ciudad=new Ciudad();
+        $ciudad->actualizar_Ciudad($datos);
+        break;
+
          case 'consultar_ciudad':
 		 echo "Estas en editar_ciudad";
         break;
 
           // Crud para Paises del submenu Ajustes
+
          case 'crear_pais':
-        echo "Estas en crear_pais";
+        $pais=new Pais();
+        $pais->nuevo_Pais($datos);
         break;
     case 'borrar_pais':
-		 echo "Estas en borrar_pais";
+		$pais=new Pais();
+        $pais->borrar_Pais($_POST['id_pais']);
         break; 
-    case 'editar_pais':
-		 echo "Estas en editar_pais";
+    case 'actualizar_pais':
+		$pais=new Pais();
+        $pais->actualizar_Pais($datos);
         break;
     case 'consultar_pais':
 		 echo "Estas en editar_pais";

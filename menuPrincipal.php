@@ -20,6 +20,7 @@
 	<script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/estiloMenuPrincipal.css">
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
 	 <script language="javascript">
 
@@ -66,19 +67,19 @@
 		<!-- Boton que me lleva al submenu de selecciones -->
 		<div class="col-sm-3" style="padding:0px 0px 0px 0px ">
 			<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-				<li role="precentacion" id="selecciones"><a href="#" class="btn btn-succes btn-lg"><span class="glyphicon glyphicon-asterisk"></span> SELECCIONES</a></li>
+				<li role="precentacion" id="selecciones"><a href="#" class="btn btn-succes btn-lg"><i class="fa fa-futbol-o" aria-hidden="true"></i> SELECCIONES</a></li>
 			</ul>			
 		</div>
 		<!-- Boton que me lleva al submenu de Reportes -->
 		<div class="col-sm-3" style="padding:0px 0px 0px 0px">
 			<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-				<li role="precentacion" id="reportes"><a href="#" class="btn btn-succes btn-lg"><span class="glyphicon glyphicon-share"></span> REPORTES</a></li>
+				<li role="precentacion" id="reportes"><a href="#" class="btn btn-succes btn-lg"><i class="fa fa-file-pdf-o" aria-hidden="true"></i> REPORTES</a></li>
 			</ul>			
 		</div>
 		<!-- Boton que me lleva al submenu de ajustes -->
 		<div class="col-sm-3" style="padding:0px 0px 0px 0px">
 			<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-			<li role="precentacion" id="ajustes" class="ajustes"><a href="#" class="btn btn-succes btn-lg"><span class="glyphicon glyphicon-wrench"></span> AJUSTES</a></li>
+			<li role="precentacion" id="ajustes" class="ajustes"><a href="#" class="btn btn-succes btn-lg"><i class="fa fa-wrench" aria-hidden="true"></i> AJUSTES</a></li>
 			</ul>			
 		</div>
        </div>

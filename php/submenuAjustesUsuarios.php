@@ -20,7 +20,7 @@
 			<?php foreach($listado as $fila){ ?>
           <tr>
     <td class="editar_usuario"  title="<?php echo $fila['id_usuario'] ?>">&nbsp;&nbsp;<?php echo $fila['Nom_Usuario'] ?></td>
-    <td><a href="#" class="borrar_usuario" title="<?php echo $fila['id_usuario'] ?>" ><span class="glyphicon glyphicon-trash pull-right"></span></a></td>
+    <td><a href="#" class="borrar_usuario" title="<?php echo $fila['id_usuario'] ?>" ><i class="fa fa-trash pull-right" aria-hidden="true"></i></a></td>
          </tr>
             <?php } ?>
        </tbody>
@@ -31,7 +31,7 @@
 <!-- Panel donde se mostrara el  formulario para editar los Roles -->
 	<div class="col-sm-8">
 		<div id="editar">	
-		<a href="#" id="nuevo_usuario"><span class="glyphicon glyphicon-plus"></span> USUARIO</a>
+		<a href="#" id="nuevo_usuario"><i class="fa fa-plus-circle" aria-hidden="true"></i> USUARIO</a>
 
 	    </div> 
 	    <!--Boton para invocar el formulario  de Nuevo Rol-->

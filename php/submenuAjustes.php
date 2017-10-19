@@ -10,59 +10,48 @@
 	<link rel="stylesheet" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/estiloMenuPrincipal.css">
 	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
-	 <script language="javascript">
-	 /*funcion principal de jquery*/
-			$(document).ready(Inicio);
-	</script>
 	
-
 </head>
-   <body>
+ <body>
 	
 	<!-- main-2 -->
 	<div class="principal" >
-		<!-- subMenu de navegacion para la opcion de Ajustes -->
 
-		<!--  <div class="panel-group"> -->
-          	<!-- <div class="panel panel-primary"> -->
-            	<!-- <div class="panel-heading"  align="center">
-            	</div> -->
-            	 <!--  <div class="panel-body" style="box-shadow: inset 2px -5px 13px 1px"> -->
-	            	<div class="row"  >																												
-	            		<!-- Boton del submenu Usuarios -->
-						<div class="col-sm-2 submenu1" >
-							<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-								<li role="button" id="usuarios"><a href="#" class="btn btn-primary btn-lg ">USUARIOS</a></li>
-							</ul>			
-						</div>
-						<!-- Boton del submenu Empresas -->
-					<div class="col-sm-2 submenu1" >
-						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-							<li role="precentacion" id="empresas2"><a href="#" class="btn btn-primary btn-lg">EMPRESAS</a></li>
-						</ul>			
-					</div>
-					<!-- Boton del submenu Ciudades -->
-					<div class="col-sm-2 submenu1" >
-						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-							<li role="precentacion" id="ciudades"><a href="#" class="btn btn-primary btn-lg">CIUDADES</a></li>
-						</ul>			
-					</div>
-					<!-- Boton del submenu Paises -->
-					<div class="col-sm-2 submenu1" >
-						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-							<li role="presentacion" id="paises"><a href="#" class="btn btn-primary btn-lg">PAISES</a></li>
-						</ul>			
-					</div><!-- Boton del submenu Roles -->
-					<div class="col-sm-2 submenu1" >
-						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-							<li role="presentacion" id="roles"><a href="#" id="rol" class="btn btn-primary btn-lg ">ROLES</a></li>
-						</ul>			
-					</div><!-- Boton del submenu Departamentos -->
-					<div class="col-sm-2 submenu1">
-						<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-							<li role="presentacion" id="departamentos"><a href="#" class="btn btn-primary btn-lg ">DEPARTAMENTOS</a></li>
-						</ul>			
-					</div>
+        	<div class="row"  >																												
+        		<!-- Boton del submenu Usuarios -->
+				<div class="col-sm-2 submenu1" >
+					<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+						<li role="button" id="usuarios"><a href="#" class="btn btn-primary btn-lg ">USUARIOS</a></li>
+					</ul>			
+				</div>
+				<!-- Boton del submenu Empresas -->
+			<div class="col-sm-2 submenu1" >
+				<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+					<li role="precentacion" id="empresas2"><a href="#" class="btn btn-primary btn-lg">EMPRESA</a></li>
+				</ul>			
+			</div>
+			<!-- Boton del submenu Ciudades -->
+			<div class="col-sm-2 submenu1" >
+				<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+					<li role="precentacion" id="ciudades"><a href="#" class="btn btn-primary btn-lg">CIUDADES</a></li>
+				</ul>			
+			</div>
+			<!-- Boton del submenu Paises -->
+			<div class="col-sm-2 submenu1" >
+				<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+					<li role="presentacion" id="paises"><a href="#" class="btn btn-primary btn-lg">PAISES</a></li>
+				</ul>			
+			</div><!-- Boton del submenu Roles -->
+			<div class="col-sm-2 submenu1" >
+				<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+					<li role="presentacion" id="roles"><a href="#" id="rol" class="btn btn-primary btn-lg ">ROLES</a></li>
+				</ul>			
+			</div><!-- Boton del submenu Departamentos -->
+			<div class="col-sm-2 submenu1">
+				<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
+					<li role="presentacion" id="departamentos"><a href="#" class="btn btn-primary btn-lg ">DEPARTAMENTOS</a></li>
+				</ul>			
+			</div>
 				
 		<!-- Panel contenedor del submenu Gestion de Usuarios -->
 
@@ -84,6 +73,13 @@
 		 </div>		
 		 </div>		
 	</div>
+
+
+	 <!--funcion principal de jquery-->
+
+	 <script language="javascript">
+			$(document).ready(Inicio);
+	</script>
 </body>
 </html>
    

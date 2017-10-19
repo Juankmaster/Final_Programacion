@@ -7,7 +7,7 @@
 	<meta charset="UTF-8">
 	<title>Login</title>
 	<link rel="shortcut icon" href="imagenes/favicon.ico"/>
-	<script type="text/javascript" src="js/jquery-3.2.1.min.js"></script>
+	<script type="text/javascript" src="bootstrap/js/jquery-3.2.1.min.js"></script>
 	<link rel="stylesheet" type="text/css" href="bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" type="text/css" href="bootstrap/estiloLogin.css">
 </head>

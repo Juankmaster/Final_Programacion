@@ -80,13 +80,7 @@
 	$("#usuarios").click(function(){
 	  $("#subpanel1").load("php/submenuAjustesUsuarios.php");
 	   $("#usuarios").css("background-color","#BEC2C4");
-	    $("#rol").css("background-color","");
-	    $("#empresas2").css("background-color","");
-	    $("#ciudades").css("background-color","");
-	    $("#paises").css("background-color","");
-	    
-
-
+	   
 	}); 						
 		
 
@@ -94,25 +88,24 @@
 
 	$("#empresas2").click(function(evento){
 		evento.preventDefault();
-	  $("#mostrar").load("php/submenuAjustesEmpresas.php");
+	  $("#subpanel1").load("php/submenuAjustesEmpresas.php");
 
 	});
 
     // Funcion  que se ejecuta al oprimir el boton Departamentos que muestra el submenu departamentos del menu ajustes
 	$("#departamentos").click(function(evento){
 		evento.preventDefault();
-	  $("#mostrar").load("php/submenuAjustesDepartamentos.php");
+	  $("#subpanel1").load("php/submenuAjustesDepartamentos.php");
+	   $("#departamentos").css("background-color","#BEC2C4");
+	    
 
 	});
-
-	 
-
-
+	    
 // Funcion  que se ejecuta al oprimir el boton Ciudaes  que muestra el submenu Ciudades del menu ajustes
 
 	$("#ciudades").click(function(evento){
 		evento.preventDefault();
-	  $("#mostrar").load("php/submenuAjustesCiudades.php");
+	  $("#subpanel1").load("php/submenuAjustesCiudades.php");
 
 	});
 
@@ -120,7 +113,7 @@
 
 	$("#paises").click(function(evento){
 		evento.preventDefault();
-	  $("#mostrar").load("php/submenuAjustesPaises.php");
+	  $("#subpanel1").load("php/submenuAjustesPaises.php");
 
 	}); 
 
@@ -129,12 +122,11 @@
 	$("#roles").click(function(evento){
 		evento.preventDefault();
 	  $("#subpanel1").load("php/submenuAjustesRoles.php");
-	  $("#rol").css("background-color","#BEC2C4");
+	  $("#roles").css("background-color","#BEC2C4");
+	  
 	    
 	}); 
 	
-	
-
 /*------------------------------------------------------------------------------------------------------*/
 							// CRUD ROLES EN SUBMENU ROLES DEL MENU AJUSTES
 
@@ -144,6 +136,7 @@
 	$(".editar_rol").click(function(evento){
 		evento.preventDefault();
 		var id_rol= $(this).attr("title");
+
 	  $.ajax({
 	  	    type:"post",
 	  	    url:"modelo/editarRol.php",
@@ -180,9 +173,9 @@
 
 	$(".borrar_rol").click(function(evento){
 		evento.preventDefault();
-		//Recupera datos del fromulario
 		var id_rol = $(this).attr("title");
-		if ( confirm("¿Realmente desea borrar el registro?")){		
+		if ( confirm("¿Realmente desea borrar el registro?")){	
+
 			$.ajax({
 				type:"post",
 				url:"control/controladorMenu.php",
@@ -209,6 +202,7 @@
       $("#crear_rol").click(function(evento){
       	evento.preventDefault();
 	var datos= $("#f_a_roles").serialize();
+
 		$.ajax({
 			type:"post",
 			url:"control/controladorMenu.php",
@@ -226,6 +220,7 @@
 	 	$("#subpanel1").load("php/submenuAjustesRoles.php");
 		   });
 
+
 /*----------------------------------------------------------------------------------------------------*/
 
 			// CRUD USUARIOS EN SUBMENU USUARIOS DEL MENU AJUSTES
@@ -234,6 +229,7 @@
     //Esta funcion trae el codigo del registro a actualizar y lo envia editar rol para procesar la informacion
     $(".editar_usuario").click(function(){
     	var id_usuario=$(this).attr("title");
+
     	$.ajax({
     		type:"post",
     		url:"modeloUsuario/editarUsuario.php",
@@ -246,14 +242,13 @@
     	})
 
     });
-			
 
 	//Esta funcion llama al controlador y envia los datos del formulario para Actualizar los usuarios del submenu Usuariosen el menu Ajustes
 
 	$("#actualizar_usuario").click(function(evento){
         evento.preventDefault();
 		var datos= $("#fusuarios").serialize();
-		alert(datos);
+
 	  $.ajax({
 	  	    type:"post",
 	  	    url:"control/controladorMenu.php",
@@ -265,7 +260,7 @@
 	  	   }
 	  })
 	}); 
-
+	 
 	// Esta funcion cancela la edicion del formulario actualizar Rol
 
 	$(".cerrar").click(function() {
@@ -277,9 +272,9 @@
 
 	$(".borrar_usuario").click(function(evento){
 		evento.preventDefault();
-		//Recupera datos del fromulario
 		var id_usuario = $(this).attr("title");
-		if ( confirm("¿Realmente desea borrar el registro?")){		
+		if ( confirm("¿Realmente desea borrar el registro?")){	
+
 			$.ajax({
 				type:"post",
 				url:"control/controladorMenu.php",
@@ -303,21 +298,359 @@
 
     $("#crear_usuario").click(function(){
     	var datos=$("#fnusuarios").serialize();
-    	alert(datos);
+    	
     	$.ajax({
     		type:"post",
     		url:"control/controladorMenu.php",
     		data:datos,
     		dataType:"html",
     		success:function(result){
-             $("#subpanel1").load("submenuAjustesUsuarios.php");
+             $("#subpanel1").load("php/submenuAjustesUsuarios.php");
 
     		}
     	})
     });
+//---------------------------------------------------------------------------------------------------------
+
+// CRUD DEPARTAMENTOS  DEL MENU AJUSTES
+	//Codigo para actualizar Departamentos en  el submenu Departametos del menu de Ajustes
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarDepartamento para procesar la informacion
+
+	$(".editar_departamento").click(function() {
+		var id_departamento=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloDepartamento/editarDepartamento.php",
+			data:'id_departamento=' + id_departamento,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	})
+
+	$("#actua_depa").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fdepartamentos").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("php/submenuAjustesDepartamentos.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_depa").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("php/submenuAjustesDepartamentos.php");	
+		
+	});
+
+
+	$(".borrar_departamento").click(function() {
+		var codigo=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{codigo:codigo, accion:'borrar_departamento'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesDepartamentos.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nuevo_departamento").click(function  () {
+		$("#editar").load("modeloDepartamento/crearDepartamento.php");
+	});
+
+
+	$("#crea_depar").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fndepartamento").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesDepartamentos.php");
+			}
+		})
+
+	});
+
+
+	//---------------------------------------------------------------------------------------------------------
+
+// CRUD   DEL MENU EMPRESAS
+	//Codigo para actualizar Empresas en  el submenu Empresa del menu  Ajustes
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarEmpresa para procesar la informacion
+
+   $(".edit_empre").click(function() {
+		var id_empresa=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloCiudad/editarCiudad.php",
+			data:'id_empresa=' + id_empresa,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	});
+
+	$("#actua_ciudad").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fempresa").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("php/submenuAjustesEmpresas.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_empresa").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("php/submenuAjustesEmpresas.php");	
+		
+	});
+
+
+	$(".borrar_empresa").click(function() {
+		var id_empresa=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{id_empresa:id_empresa, accion:'borrar_empresa'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesEmpresas.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nueva_empresa").click(function  () {
+		$("#editar").load("modeloEmpresa/crearEmpresa.php");
+	});
+
+
+	$("#crea_empresa").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fnempresa").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesEmpresas.php");
+			}
+		})
+
+	});
+
+// CRUD   DEL MENU CIUDADES
+	//Codigo para actualizar Ciudades en  el submenu Ciudades del menu  Ajustes
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarCiudad para procesar la informacion
+
+   $(".edit_ciudad").click(function() {
+		var id_ciudad=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloCiudad/editarCiudad.php",
+			data:'id_ciudad=' + id_ciudad,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	});
+
+	$("#actua_ciudad").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fciudad").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("php/submenuAjustesCiudades.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_ciudad").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("php/submenuAjustesCiudades.php");	
+		
+	});
+
+
+	$(".borrar_ciudad").click(function() {
+		var id_ciudad=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{id_ciudad:id_ciudad, accion:'borrar_ciudad'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesCiudades.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nueva_ciudad").click(function  () {
+		$("#editar").load("modeloCiudad/crearCiudad.php");
+	});
+
+
+	$("#crea_ciudad").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fnciudad").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesCiudades.php");
+			}
+		})
+
+	});
+
+
+	// CRUD   DEL MENU PAIS
+	//Codigo para actualizar Ciudades en  el submenu Pais del menu  Ajustes
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarPais para procesar la informacion
+
+   $(".edit_pais").click(function() {
+		var id_pais=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloPais/editarPais.php",
+			data:'id_pais=' + id_pais,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	});
+
+	$("#actua_pais").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fpais").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("php/submenuAjustesPaises.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_pais").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("php/submenuAjustesPaises.php");	
+		
+	});
+
+
+	$(".borrar_pais").click(function() {
+		var id_pais=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{id_pais:id_pais, accion:'borrar_pais'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesPaises.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nuevo_pais").click(function  () {
+		$("#editar").load("modeloPais/crearPais.php");
+	});
+
+
+	$("#crea_pais").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fnpais").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("php/submenuAjustesPaises.php");
+			}
+		})
+
+	});
+
 
 
 }
+
+	
+
+
+			
+
+
+
 
 
 
