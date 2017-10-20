@@ -3,7 +3,7 @@
 include '../modeloPais/modelo_pais.php';
 			$id_pais=$_POST["id_pais"];
 		    $pais=new Pais();
-	   $resultado= $pais->consultar_Pais($id_pais);	
+	        $resultado= $pais->consultar_Pais($id_pais);	
 
 ?>
 

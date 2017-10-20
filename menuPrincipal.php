@@ -1,11 +1,10 @@
- 
- <?php 
+  <?php 
 	session_start();
   
 	if (isset($_SESSION["sesion_user"])) {
 		/*session_destroy(); */
 	}else{
-		/* session_destroy();*/
+		
 		 header("Location:login.php"); 
 
 	}
@@ -38,6 +37,7 @@
 			 <div class="collapse navbar-collapse">
 			   <ul class="nav navbar-nav  navbar-right">
 				<li><a href="#">Hola:<code><?php echo $_SESSION["sesion_user"]?></code></a></li>
+				<li><a href="#">Empresa:<code><?php echo $_SESSION["empresa"]?></code></a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> OPCIONES 
 					  <span class="caret"></span>

@@ -1,35 +1,114 @@
-
-<!-- Codigo php que controla el formulario login  -->
+<!-- Codigo php que controla el formulario login -->
 <?php
- session_start();
+     session_start();
 
-      $cod_empresa= $_POST['cod_empresa'];
-      $usuario= $_POST['usuario'];
-      $pass= $_POST['clave'];
-    
-  include "../modelo/Conexion.php";
+      require_once("../modelo/Conexion.php");
 
-         $sql="SELECT * FROM `Usuarios` WHERE Nom_Usuario='$usuario' AND clave_usuario=$pass";
-
-         $resultado=$conexion->query($sql)or die($conexion->connect_error);
+            $empresa=verificar_input($_POST["cod_empresa"]); 
+            $usuario=verificar_input( $_POST['usuario']);
+            $pass=verificar_input( $_POST['clave']);
+            $login_user=new Login();
+            $resultado=$login_user->consultar($usuario,$pass);
+            $datos= array();
+          
+        if (!preg_match("/^[0-9]+$/",$empresa)) {
+      
+           $_SESSION['error1']="Campo Solo Numerico";
          
-if ($resultado->num_rows > 0) {
+          $datos[]=true;
+        }
 
-   $_SESSION["sesion_user"]=$usuario;
-   header("Location:../menuPrincipal.php");
-   
+
+           if (!preg_match("/^[0-9a-zA-Z]+$/",$usuario)) {
       
-} else { 
+            $_SESSION['error2']="Campo Solo Alfanumerico";
+            $datos[]=true;
+        }
+         
 
-        header("Location:../login.php");
+            if (!preg_match("/^[0-9a-zA-Z]+$/",$pass)) {
+     	
+     		    $_SESSION['error3']="Campo Solo Alfanumerico";
+     		    $datos[]=true;
+  			}
+
+  			if(count($datos)>0){
+ 				 header("Location:../login.php"); 
+      
+  			}else 
+
+        {
+         
+		    if (count($resultado)>0) 
+          {
+
+          $_SESSION["sesion_user"]=$usuario;
+
+           $_SESSION["empresa"]=$empresa;
+      
+
+         header("Location:../menuPrincipal.php");
+          
+          } 
        
-}
+	      }
+
+		  function verificar_input($data){
+
+      	$data=trim($data);
+      	$data=stripcslashes($data);
+      	$data=htmlspecialchars($data);
+      	return $data;
+
+        }
+
+
+ ?>
+
+
+  
+          
+
+         
+
       
 
-$conexion->close();
+        
+       
+          
+
+        
+
+
+
+
+      
+   
+
+
+
+
+
+
+       
+
+
+ 
+
+      
+
+
+ 
+    
+
+    
+
+       
+
+
+
 
            
- ?>
 
 
        

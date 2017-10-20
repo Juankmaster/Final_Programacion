@@ -1,4 +1,9 @@
+<?php 
+session_start();
 
+ ?>
+ 
+<!-- Codigo php que controla el formulario login  -->
 <!-- Pagina de login  -->
 
 <!DOCTYPE html>
@@ -29,20 +34,38 @@
 			<div class="container-fluid">
 				<div class="conta-1">
 				<form  role="form" method="post" action="control/controladorLogin.php" class="form_login">
-					<!-- <div class="form-group">
-						
-					</div> -->
+					
 					<div class="form-group">
 						<label  for="cod_empresa">Codigo Empresa</label>
-						<input type="text" class="form-control" name="cod_empresa" required placeholder="Nombre de Usuario Requerido">
+						<input type="text" class="form-control" name="cod_empresa" required placeholder="Campo Requerido">
+						<?php 
+							if(isset($_SESSION['error1'])){
+								echo "<font color='red'>".$_SESSION['error1']."</font>";
+							}
+								unset($_SESSION['error1']);
+						 ?>
+
 				   </div>
 				   <div class="form-group">
 						<label  for="usuario">Nombre Usuario</label>
-						<input type="text" class="form-control" name="usuario" required placeholder="Nombre de Usuario Requerido">
+						<input type="text" class="form-control" name="usuario" required placeholder="Campo Requerido">
+							<?php 
+							if(isset($_SESSION['error2'])){
+								echo "<font color='red'>".$_SESSION['error2']."</font>";
+							}
+								unset($_SESSION['error2']);
+						 ?>
+
 				   </div>
 				   <div class="form-group">
 						<label  for="clave">Contraseña</label>
 						<input type="password" class="form-control" name="clave" required placeholder="Campo Requerido">
+						<?php 
+							if(isset($_SESSION['error3'])){
+								echo "<font color='red'>".$_SESSION['error3']."</font>";
+							}
+								unset($_SESSION['error3']);
+						 ?>
 				   </div>
 				   <div class="form-group">
 				   	  <label><input type="checkbox" name="remember"> Mantener Logueado</label>
