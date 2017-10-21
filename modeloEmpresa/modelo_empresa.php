@@ -10,10 +10,10 @@ class Empresa
 	public $email_empresa;
 	
 
-	/*function __construct()
+	function __construct()
 	{
 		# code...
-	}*/
+	}
 	
 
 	//Funcion para consultar en la base dedatos las Empresas existentes
@@ -27,6 +27,7 @@ class Empresa
 	public function consultar_Empresa($valor="")
 	{
 		if ($valor !="") {
+			
 		$sql="SELECT * FROM `empresa` WHERE id_empresa= $valor";
 
 		$this->abrir_conexion();

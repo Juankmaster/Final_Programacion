@@ -3,7 +3,6 @@ session_start();
 
  ?>
  
-<!-- Codigo php que controla el formulario login  -->
 <!-- Pagina de login  -->
 
 <!DOCTYPE html>

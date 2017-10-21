@@ -1,5 +1,7 @@
-  <?php 
+<?php 
 	session_start();
+
+	 $rol=$_SESSION["Rol"];
   
 	if (isset($_SESSION["sesion_user"])) {
 		/*session_destroy(); */
@@ -8,7 +10,7 @@
 		 header("Location:login.php"); 
 
 	}
- ?>
+?>	
 
 <!DOCTYPE html>
 <html lang="es">
@@ -22,10 +24,10 @@
 	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.4.0/css/font-awesome.min.css">
 	<script type="text/javascript" src="bootstrap/js/funcionesJquery.js"></script>
 	 <script language="javascript">
-
 	  $(document).ready(Inicio);
+	 </script>
+
 	
-	</script>
 	 
 </head>
 <body class="container">
@@ -36,8 +38,8 @@
 			 <div class="navbar navbar-brand"><p>Control-Soft®</p></div>
 			 <div class="collapse navbar-collapse">
 			   <ul class="nav navbar-nav  navbar-right">
-				<li><a href="#">Hola:<code><?php echo $_SESSION["sesion_user"]?></code></a></li>
 				<li><a href="#">Empresa:<code><?php echo $_SESSION["empresa"]?></code></a></li>
+				<li><a href="#">Hola:<code><?php echo $_SESSION["sesion_user"]?></code></a></li>
 				<li class="dropdown">
 					<a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button"> OPCIONES 
 					  <span class="caret"></span>
@@ -77,9 +79,9 @@
 			</ul>			
 		</div>
 		<!-- Boton que me lleva al submenu de ajustes -->
-		<div class="col-sm-3" style="padding:0px 0px 0px 0px">
+		<div class="col-sm-3 ajuste" style="padding:0px 0px 0px 0px">
 			<ul class=" nav nav-tabs nav-justified navbar navbar-inverse">
-			<li role="precentacion" id="ajustes" class="ajustes"><a href="#" class="btn btn-succes btn-lg"><i class="fa fa-wrench" aria-hidden="true"></i> AJUSTES</a></li>
+			<li role="precentacion" id="ajustes" class="ajustes"><a href="#" class="btn btn-succes btn-lg " id="ajuste" ><i class="fa fa-wrench" aria-hidden="true"></i> AJUSTES</a></li>
 			</ul>			
 		</div>
        </div>
@@ -93,6 +95,20 @@
 		</div>
 		</center>
 	</div>
+
+	
+	     <?php   if($rol==3) {?> 
+
+           <script type="text/javascript">
+	          $(document).ready(function Rol_Admin_empresa () {
+		           $("#ajustes").css("display", "none");
+		   	 });
+  		   </script>
+
+
+	
+        
+          <?php } ?> 
 </body>
 </html>
 		

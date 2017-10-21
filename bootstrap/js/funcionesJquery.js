@@ -21,7 +21,7 @@
 // Funcion que se ejecuta al oprimir el boton Empresas me muestra el submenu de empresas
 
 	$("#empresas").click(function(){
-		$("#mostrar").load("php/submenuEmpresas.php");
+		$("#mostrar").load("vistaEmpresa/submenuEmpresas.php");
 
 	});
 
@@ -57,7 +57,8 @@
 // Funcion  que se ejecuta al oprimir el boton sucursales que muestra el submenu Sucursales
 
 	$("#sucursales").click(function(){
-		$("#subpanel").load("php/submenuSucursales.php");
+		alert("Me undiste");
+		$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");
 
 	});
 		
@@ -105,6 +106,7 @@
 
 	$("#ciudades").click(function(evento){
 		evento.preventDefault();
+
 	  $("#subpanel1").load("php/submenuAjustesCiudades.php");
 
 	});
@@ -641,8 +643,10 @@
 	});
 
 
+ 	
 
-}
+ }
+
 
 	
 
