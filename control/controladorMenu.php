@@ -10,6 +10,8 @@ require ('../modeloDepartamento/modelo_departamento.php');
 require ('../modeloEmpresa/modelo_empresa.php');
 require ('../modeloCiudad/modelo_ciudad.php');
 require ('../modeloPais/modelo_pais.php');
+require ('../modeloSucursal/modelo_sucursal.php');
+require ('../modeloEmpleado/modelo_empleado.php');
 
 $datos=$_POST;
 
@@ -36,7 +38,8 @@ switch ($_POST["accion"]) {
 		 echo "Estas en consultar_departamento";
         break;
 
-        // Crud para el submenu procesos del menu Empresas
+    // Crud para el submenu procesos del menu Empresas
+
          case 'crear_proceso':
         echo "Estas en crear_proceso";
         break;
@@ -50,7 +53,8 @@ switch ($_POST["accion"]) {
 		 echo "Estas en consultar_proceso";
         break;
 
-         // Crud para el submenu contratos del menu Empresas
+    // Crud para el submenu contratos del menu Empresas
+
          case 'crear_contrato':
         echo "Estas en crear_contrato";
         break;
@@ -64,7 +68,8 @@ switch ($_POST["accion"]) {
 		 echo "Estas en consultar_contrato";
         break;
 
-          // Crud para submenu proveedores del menu Empresas
+    // Crud para submenu proveedores del menu Empresas
+
          case 'crear_proveedores':
         echo "Estas en crear_proveedores";
         break;
@@ -76,6 +81,48 @@ switch ($_POST["accion"]) {
         break;
     case 'consultar_proveedores':
 		 echo "Estas en consultar_proveedores";
+        break;
+
+    // Crud para submenu Sucursales del menu Empresa
+
+    case 'crear_sucursal':
+       $sucursal=new Sucursal();
+       $sucursal->nuevo($datos);
+        break;
+
+    case 'borrar_sucursal':
+        $sucursal=new Sucursal();
+       $sucursal->borrar($datos['id_sucursal']);
+        break;
+
+    case 'actualizar_sucursal':
+        $sucursal=new Sucursal();
+       $sucursal->editar($datos);
+        break;
+
+    case 'consultar_sucursal':
+         echo "Estas en consultar_proveedores";
+        break;
+
+    // Crud para submenu Empleados del menu Empresa
+
+    case 'crear_empleado':
+       $empleado=new Empleado();
+       $empleado->nuevo($datos);
+        break;
+
+    case 'borrar_empleado':
+        $empleado=new Empleado();
+       $empleado->borrar($datos['id_empleado']);
+        break;
+
+    case 'actualizar_empleado':
+        $empleado=new Empleado();
+       $empleado->editar($datos);
+        break;
+
+    case 'consultar_empleado':
+         echo "Estas en consultar_empleado";
         break;
 
   //----------------------------------------------------------------------------------

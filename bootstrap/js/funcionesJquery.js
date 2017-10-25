@@ -28,36 +28,35 @@
 
 	// Funcion  que se ejecuta al oprimir el boton departamentos que muestra el submenu departamentos
 
-	$("#departamentos").click(function(){
+	/*$("#departamentos").click(function(){
 		$("#subpanel").load("php/submenuDepartamentos.php");
 	
-	});
+	});*/
 
 	// Funcion  que se ejecuta al oprimir el boton procesos que muestra el submenu procesos
 
 	$("#procesos").click(function(){
-		$("#subpanel").load("php/submenuProcesos.php");
+		$("#subpanel1").load("php/submenuProcesos.php");
 
 	});
 
 	// Funcion  que se ejecuta al oprimir el boton contratos que muestra el submenu Contratos
 
 	$("#contratos").click(function(){
-		$("#subpanel").load("php/submenuContratos.php");
+		$("#subpanel1").load("php/submenuContratos.php");
 
 	});
 
 	// Funcion  que se ejecuta al oprimir el boton proveedores que muestra el submenu proveedores
 
 	$("#proveedores").click(function(){
-		$("#subpanel").load("php/submenuProveedores.php");
+		$("#subpanel1").load("php/submenuProveedores.php");
 
 	});
 
 // Funcion  que se ejecuta al oprimir el boton sucursales que muestra el submenu Sucursales
 
 	$("#sucursales").click(function(){
-		alert("Me undiste");
 		$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");
 
 	});
@@ -65,7 +64,8 @@
 	// Funcion  que se ejecuta al oprimir el boton empleados que muestra el submenu Empleados
 
 	$("#empleados").click(function(){
-	  $("#subpanel").load("php/submenuEmpleados.php");
+		
+	  $("#subpanel1").load("vistaEmpresa/submenuEmpresaEmpleados.php");
 
 	});
 
@@ -641,6 +641,175 @@
 		})
 
 	});
+
+
+	// CRUD   DEL MENU SUCURSALES
+	//Codigo para actualizar Sucursales en  el submenu Sucursales del menu  Empresa
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarPais para procesar la informacion
+
+   $(".edit_sucursal").click(function() {
+		var id_sucursal=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloSucursal/editarSucursal.php",
+			data:'id_sucursal=' + id_sucursal,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	});
+
+	$("#actua_sucursal").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fsucursal").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_sucursal").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");	
+		
+	});
+
+
+	$(".borrar_sucursal").click(function() {
+		var id_sucursal=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{id_sucursal:id_sucursal, accion:'borrar_sucursal'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nueva_sucursal").click(function  () {
+		$("#editar").load("modeloSucursal/crearSucursal.php");
+	});
+
+
+	$("#crea_sucursal").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fnsucursal").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("vistaEmpresa/submenuEmpresasSucursales.php");
+			}
+		})
+
+	});
+
+
+	// CRUD   DEL MENU EMPLEADOS
+	//Codigo para actualizar Empleados en  el submenu Empleados del menu  Empresa
+	//Esta funcion trae el codigo del registro a actualizar y lo envia editarEmpleado para procesar la informacion
+
+   $(".edit_empleado").click(function() {
+		var id_empleado=$(this).attr("title");
+		
+		$.ajax({
+			type:"post",
+			url:"modeloEmpleado/editarEmpleado.php",
+			data:'id_empleado=' + id_empleado,
+			dataType:"html",
+			success:function(result) {
+				$("#editar").html(result);
+			}
+		})
+				
+	});
+
+	$("#actua_empleado").click(function(e) {
+		e.preventDefault();
+		var datos=$("#fempleado").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html"
+			}) .done(function(result) {
+        		$("#subpanel1").load("vistaEmpresa/submenuEmpresaEmpleados.php");
+        	});
+			
+		});
+
+	
+	$("#cerrar_empleado").click(function(e) {
+		e.preventDefault();
+		$("#subpanel1").load("vistaEmpresa/submenuEmpresaEmpleados.php");	
+		
+	});
+
+
+	$(".borrar_empleado").click(function() {
+		var id_empleado=$(this).attr("title");
+		
+		if(confirm("¿Realmente desea borrar el registro? ")){
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:{id_empleado:id_empleado, accion:'borrar_empleado'},
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("vistaEmpresa/submenuEmpresaEmpleados.php");
+			}
+		})
+
+		}
+	});
+
+
+	$("#nuevo_empleado").click(function  () {
+		$("#editar").load("modeloEmpleado/crearEmpleado.php");
+	});
+
+
+	$("#crea_empleado").click(function (e) {
+		e.preventDefault();
+		var datos=$("#fnempleado").serialize();
+		
+		$.ajax({
+			type:"post",
+			url:"control/controladorMenu.php",
+			data:datos,
+			dataType:"html",
+			success:function  (result) {
+				$("#subpanel1").load("vistaEmpresa/submenuEmpresaEmpleados.php");
+			}
+		})
+
+	});
+
+
+
+
+
 
 
  	
