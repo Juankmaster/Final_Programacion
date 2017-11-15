@@ -1,0 +1,82 @@
+/* Estilos css para la pagina index.html */
+
+ body{
+		
+	 background-color:#F6FBFA  ; 
+} 
+#nav > ul > li {
+			/* border-radius:20px 20px 20px 20px; */
+			display: inline-block;
+			margin-left: 0.5em;
+			padding: 0.5em 1.5em;
+			text-decoration: none;
+			line-height: 1.75em;
+			font-family:inherit;
+			/*font-size: 20px;*/
+			position: relative;
+			/*margin-bottom: 50px	;*/
+}
+#nav > ul > li>a{
+border-radius:20px 20px 20px 20px;
+
+}
+.container-fluid	{
+ padding-top: 100px;
+  background: #333333 url("../imagenes/contrato7.jpg") no-repeat;
+  height: 700px;
+  width: 1500px;
+}
+#nav > ul > li > a:hover{
+	text-decoration: none;
+}
+ #btn {
+	margin-top: 50px;
+	border-radius: 5px,5px,5px,5px;
+	width: 10%;
+	height:auto;
+	font-size: 20px;
+} 
+#nav > ul > li > a{
+			text-decoration: none;
+			color: #fff;
+			font-family:inherit;
+			font-size: 20px;
+			position: relative;
+		}
+
+			
+
+
+
+		
+
+
+
+
+
+
+
+
+
+
+
+
+
+   
+
+
+
+
+	 
+
+
+
+
+
+
+
+
+
+
+		
+
